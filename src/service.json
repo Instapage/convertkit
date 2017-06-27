@@ -1,0 +1,13 @@
+{
+	"name": "ConvertKit",
+	"apiVersion": "3",
+	"description": "Services description used by Guzzle for talking to Convert Kit REST API.",
+	"operations": {
+		"getAllLists": {
+			"httpMethod": "GET",
+			"uri": "/v3/forms",
+			"parameters": {},
+			"responseClass": "CSD\\Convertkit\\Response\\GetAllListsResponse"
+		}
+	}
+}
