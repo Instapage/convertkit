@@ -11,9 +11,15 @@
 		// config accepts following parameters: api_key, api_secret, url and origin
 		public static function factory( $config = [] )
 		{
+			$url = 'https://api.convertkit.com';
+
+			if( isset( $config[ 'url' ] ) )
+			{
+				$url = $config[ 'url' ];
+			}
 
 			$parameters = [
-				'url' => $config[ 'url' ] || 'https://api.convertkit.com',
+				'url' => $url,
 				'request.options' => [
 					'query' => [
 						'api_key' => $config[ 'api_key' ],
