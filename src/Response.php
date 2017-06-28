@@ -16,27 +16,7 @@
 
 		public function getResult()
 		{
-			return isset( $this->data[ 'result' ] ) ? $this->data[ 'result' ] : null;
-		}
-
-		public function getError()
-		{
-			if ( isset( $this->data[ 'errors' ] ) && count( $this->data[ 'errors' ] ) )
-			{
-				return $this->data[ 'errors' ][ 0 ];
-			}
-
-			return null;
-		}
-
-		public function getWarning()
-		{
-			if( isset( $this->data[ 'warnings' ] ) && count( $this->data[ 'warnings' ] ) )
-			{
-				return $this->data[ 'warnings' ][ 0 ];
-			}
-
-			return null;
+			return $this->data;
 		}
 
 		public static function fromCommand( OperationCommand $command )
