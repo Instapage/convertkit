@@ -41,24 +41,25 @@
 			return $this->getResult( 'getAllLists', $args, $returnRaw );
 		}
 
-		public function addSubscriberToList( $formId, $email, $firstName = null, $tags = '', $fields = [], $args = [], $returnRaw = false )
+		// required fields in data: form_id, email, fields. Optional: fields, first_name
+		public function addSubscriberToList( $data, $args = [], $returnRaw = false )
 		{
-			$args[ 'formId' ] = $formId;
-			$args[ 'email' ] = $email;
+			$args[ 'formId' ] = $data[ 'form_id' ];
+			$args[ 'email' ] = $data[ 'email' ];
 
 			if( isset( $firstName ) )
 			{
-				$args[ 'first_name' ] = $firstName;
+				$args[ 'first_name' ] = $data[ 'first_name' ];
 			}
 
 			if( !empty( $tags ) )
 			{
-				$args[ 'tags' ] = $tags;
+				$args[ 'tags' ] = $data[ 'tags' ];
 			}
 
 			if( !empty( $fields ) )
 			{
-				$args[ 'fields' ] = $fields;
+				$args[ 'fields' ] = $data[ 'fields' ];
 			}
 
 			return $this->getResult( 'addSubscriberToList', $args, $returnRaw );
