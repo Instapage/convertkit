@@ -47,17 +47,17 @@
 			$args[ 'formId' ] = $data[ 'form_id' ];
 			$args[ 'email' ] = $data[ 'email' ];
 
-			if( isset( $firstName ) )
+			if( isset( $data[ 'first_name' ] ) )
 			{
 				$args[ 'first_name' ] = $data[ 'first_name' ];
 			}
 
-			if( !empty( $tags ) )
+			if( !empty( $data[ 'tags' ] ) )
 			{
 				$args[ 'tags' ] = $data[ 'tags' ];
 			}
 
-			if( !empty( $fields ) )
+			if( !empty( $data[ 'fields' ] ) )
 			{
 				$args[ 'fields' ] = $data[ 'fields' ];
 			}
