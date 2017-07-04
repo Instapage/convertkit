@@ -105,14 +105,27 @@
 
 		private function getResult( $command, $args, $returnRaw )
 		{
-			$cmd = $this->getCommand( $command, $args );
-			$cmd->prepare();
-
-			if( $returnRaw )
+			try
 			{
-				return $cmd->getResponse()->getBody( true );
-			}
+				$cmd = $this->getCommand( $command, $args );
+				$cmd->prepare();
 
-			return $cmd->getResult();
+				if( $returnRaw )
+				{
+					return $cmd->getResponse()->getBody( true );
+				}
+
+				return $cmd->getResult();
+			}
+			catch( \Exception $e )
+			{
+				$response = $e->getResponse();
+
+				return [
+					'success' => false,
+					'status code' => $response->getStatusCode(),
+					'reason' => $response->getReasonPhrase(),
+				];
+			}
 		}
 	}
