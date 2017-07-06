@@ -8,7 +8,7 @@
 
 	class Client extends Guzzle_Client
 	{
-		// config accepts following parameters: api_key, api_secret, url and origin
+		// config accepts following parameters: api_secret, url and origin
 		public static function factory( $config = [] )
 		{
 			$url = 'https://api.convertkit.com';
@@ -22,7 +22,6 @@
 				'url' => $url,
 				'request.options' => [
 					'query' => [
-						'api_key' => $config[ 'api_key' ],
 						'api_secret' => $config[ 'api_secret' ],
 						'origin' => $config[ 'origin' ]
 					]
