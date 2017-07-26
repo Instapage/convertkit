@@ -102,6 +102,13 @@
 			*/
 		}
 
+		public function getSubscriptionsToForm( $formId, $args = [], $returnRaw = false )
+		{
+			$args[ 'formId' ] = $formId;
+
+			return $this->getResult( 'getSubscriptionsToForm', $args, $returnRaw );
+		}
+
 		private function getResult( $command, $args, $returnRaw )
 		{
 			try
