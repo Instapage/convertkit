@@ -48,6 +48,14 @@
 				"label": { "location": "json" }
 			},
 			"responseClass": "CSD\\Convertkit\\Response\\CreateCustomFieldResponse"
+		},
+		"getSubscriptionsToForm": {
+			"httpMethod": "GET",
+			"uri": "/v3/forms/{formId}/subscriptions",
+			"parameters": {
+				"formId": { "location": "uri" }
+			},
+			"responseClass": "CSD\\Convertkit\\Response\\GetSubscriptionsToFormResponse"
 		}
 	}
 }
