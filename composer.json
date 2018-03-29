@@ -1,0 +1,19 @@
+{
+    "name": "bondarum/convertkit-rest-api",
+    "description": "A PHP client for the Convert Kit REST API",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.3",
+        "guzzle/guzzle": "~3.8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CSD\\Convertkit\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcin Bondaruk"
+        }
+    ]
+}

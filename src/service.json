@@ -1,0 +1,61 @@
+{
+	"name": "ConvertKit",
+	"apiVersion": "3",
+	"description": "Services description used by Guzzle for talking to Convert Kit REST API.",
+	"operations": {
+		"getAllLists": {
+			"httpMethod": "GET",
+			"uri": "/v3/forms",
+			"parameters": {},
+			"responseClass": "CSD\\Convertkit\\Response\\GetAllListsResponse"
+		},
+		"addSubscriberToList": {
+			"httpMethod": "POST",
+			"uri": "/v3/forms/{formId}/subscribe",
+			"parameters": {
+				"formId": { "location": "uri" },
+				"email": { "location": "json" },
+				"first_name": { "location": "json" },
+				"tags": { "location": "json" },
+				"fields": { "location": "json" }
+			},
+			"responseClass": "CSD\\Convertkit\\Response\\AddSubscriberToLIstResponse"
+		},
+		"getAllTags": {
+			"httpMethod": "GET",
+			"uri": "/v3/tags",
+			"parameters": {},
+			"responseClass": "CSD\\Convertkit\\Response\\GetAllTagsResponse"
+		},
+		"createTag": {
+			"httpMethod": "POST",
+			"uri": "/v3/tags",
+			"parameters": {
+				"name": { "location": "json" }
+			},
+			"responseClass": "CSD\\Convertkit\\Response\\CreateTagResponse"
+		},
+		"getCustomFields": {
+			"httpMethod": "GET",
+			"uri": "/v3/custom_fields",
+			"parameters": {},
+			"responseClass": "CSD\\Convertkit\\Response\\GetCustomFieldsResponse"
+		},
+		"createCustomField": {
+			"httpMethod": "POST",
+			"uri": "/v3/custom_fields",
+			"parameters": {
+				"label": { "location": "json" }
+			},
+			"responseClass": "CSD\\Convertkit\\Response\\CreateCustomFieldResponse"
+		},
+		"getSubscriptionsToForm": {
+			"httpMethod": "GET",
+			"uri": "/v3/forms/{formId}/subscriptions",
+			"parameters": {
+				"formId": { "location": "uri" }
+			},
+			"responseClass": "CSD\\Convertkit\\Response\\GetSubscriptionsToFormResponse"
+		}
+	}
+}
